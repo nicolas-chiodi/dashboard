@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en">
+<head>   
+	<meta charset="utf-8" />   
+        <title>Mon premier TP</title> 
+ </head>
+	<h1>Flas</h1>
+
+    </head>
+	 
+	<body>
+<script>  
+
+function convert(){}
+	var userName;
+	var Condition;
+	/* '', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept', 'huit', 'neuf', */
+	var units2Letters = ['dix', 'onze', 'douze', 'treize', 'quatorze', 'quinze', 'seize'],
+		tens2Letters = ['dix', 'vingt', 'trente', 'quarante', 'cinquante', 'soixante', 'soixante', 'quatre-vingt', 'quatre-vingt'],
+		l_value = ['10', '11', '12', '13', '14', '15', '16'];
+
+	Condition = true;
+	while(Condition){
+	    userName = parseInt(prompt('Entrez votre age :'), 10);
+	    if (userName){Condition = false} 
+	    else{Condition = confirm("Vous n'avez pas rentré de chiffre, voulez-vous continuez?") ? true:false ;}
+	  
+    userName = userName.toString();
+    var specia = userName.slice(-2); 
+    var unit = userName.slice(-1); 
+	var dizaine = userName.slice(-2,-1); 
+	var centaine = userName.slice(-3, -2); 
+	var millier = userName.slice(-4,-3); 
+
+
+    if(l_value.indexOf(specia) != -1){
+	    var one = units2Letters[l_value.indexOf(specia)];
+	    console.log(one)
+    }
+    if(l_value.indexOf(specia) != -1){
+	    var one = units2Letters[l_value.indexOf(specia)];
+	    console.log(one)
+    }    
+	if(l_value.indexOf(specia) != -1){
+	    var one = units2Letters[l_value.indexOf(specia)];
+	    console.log(one)
+    }	
+   else if (l_value.indexOf(unite) != -1){
+   
+    }
+
+  /*for(i=0, i<, i++){
+	userName.slice(-i)
+  } */
+
+  
+  
+}
+
+
+convert();
+
+
+
+</script> 
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+
+    <link href="{{ url_for('static', filename='Dashboard1.css') }}" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700' rel='stylesheet' type='text/css'>
+
+   <title>Chart.js </title>   
+      <!-- import plugin script -->   <script src='Chart.min.js'></script>   </head>
+
+
+</head>
+
+
+
+<body>  
+      <h1>Flask Chart.js</h1><!-- bar chart canvas element -->
+    <canvas id="chart" width="600" height="400">
+
+    </canvas>
+    <div class="wrapper">
+        <header>
+            <div class="container clearfix">
+                <h1>Overview <span>
+                        {% for mot in Liste %}
+                       {{ mot }} {% endfor %}
+                    </span><a class="button">Change Date Range</a></h1>
+            </div>
+        </header>
+
+
+        <div class="container clearfix">
+
+            <div class="third widget doughnut">
+                <h3>Breakdown of Hours</h3>
+                <div class="canvas-container">
+                    <canvas id="hours"></canvas>
+                    <span class="status"></span>
+                </div>
+                <div class="chart-legend">
+                        <ul>
+                            <li class="ship">Shipping &amp; Receiving</li>
+                            <li class="rework">Rework</li>
+                            <li class="admin">Administrative</li>
+                            <li class="prod">Production</li>
+                        </ul>
+                    </div>
+           </div>
+
+
+            <div class="third widget line">
+                <div class="chart-legend">
+                    <h3>Shipments per Day</h3>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="shipments"></canvas>
+                </div>
+            </div>
+
+
+            <div class="third widget">
+                <div class="chart-legend">
+                    <h3>Customer Service Assessment</h3>
+                </div>
+                <div class="canvas-container">
+                    <canvas id="departments"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="push"></div>
+        </div>
+        <footer>
+                <p>Posted by: Nicolas Chiodi</p>
+                <p>Contact information: <a href="mailto:nico.chiodi@orange.fr">
+                 nico.chiodi@orange.fr</a>.</p>
+        </footer>
+
+<canvas id="something"></canvas>
+<script>
+
+var data = [
+    {
+        value: 20,
+        color:"#637b85"
+    },
+    {
+        value : 30,
+        color : "#2c9c69"
+    },
+    {
+        value : 40,
+        color : "#dbba34"
+    },
+    {
+        value : 10,
+        color : "#c62f29"
+    }
+ 
+];
+var ctx = document.getElementById("hours").getContext("2d");
+new Chart(ctx).Doughnut(data, {
+			scaleOverride: true,
+			scaleSteps: steps,
+			scaleStepWidth: Math.ceil(max / steps),
+			scaleStartValue: 0,
+			scaleShowVerticalLines: true,
+			scaleShowGridLines : true,
+			barShowStroke : true,
+			scaleShowLabels: true
+	   });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

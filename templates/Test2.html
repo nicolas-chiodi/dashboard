@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="en">
+<head>   
+	<meta charset="utf-8" />   
+	<title>Chart.js </title>     
+
+ </head>
+<body>
+
+<script>
+
+function Test1(){
+	 var nicks = '',
+		 nick,
+		 dict = {};
+
+   	while (true) {
+		nick = prompt('Entrez un prénom :');
+		var compteur = 1;
+		if (nick) {
+			compteur++
+		
+			dict['Famille ${compteur}' +compteur] = nick;
+			alert(dict)
+		} else {
+		     compteur = 1;
+
+			 for(var i in dict){
+			 	compteur++
+
+				alert(dict[i]);
+			
+			}
+			
+			break; // On quitte la boucle
+		}
+	}
+
+	alert(nick); // Affiche les prénoms à la suite
+
+
+}
+
+Test1();
+</script>
+
+
+</body>

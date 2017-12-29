@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello vous</title>
+	Bonjour à tous
+</head>
+
+<body>
+
+    <script>
+		var userName = parseint(prompt('Entrez votre age :'));
+	switch userName:
+		case 1 < userName < 17:
+			alert("« Vous n'êtes pas encore majeur. »");
+			break;
+		case 18 < userName < 49:
+			alert("« Vous êtes majeur mais pas encore senior. »");
+			break;
+
+		case 50 < userName < 59:
+			alert("« Vous êtes senior mais pas encore retraité. »");
+			break;
+
+		case 50 < userName < 59:
+			alert("« Vous êtes senior mais pas encore retraité. »");
+			break;
+			
+		default:
+        alert("Info du jour : le meuble ne contient que 4 tiroirs et, jusqu'à preuve du contraire, les tiroirs négatifs n'existent pas.");	
+
+		if (2 < 8 && 8 >= 4) { // Cette condition renvoie « true », le code est donc exécuté
+			alert('La condition est bien vérifiée.');
+		}		
+		if (confirm('Voulez-vous exécuter le code JavaScript de cette page ?')) {
+			alert('Le code a bien été exécuté !');
+		}	
+
+		alert('Votre catégorie : ' + (confirm('Êtes-vous majeur ?') ? '18+' : '-18'));		
+    </script>
+	
+userName
+</body>
+</html>

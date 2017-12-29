@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Le titre de la page</title>
+	<style>
+		.CSS{		
+		background: blue;
+		color: white;
+		}
+	</style>
+</head>
+
+<body>
+    <div id="myDiv">	
+	</div>
+<a id="myLink" href="http://www.un_lien_quelconque.com">Un lien modifié dynamiquement</a>
+
+<blockquote>
+   <p id="myP">Un peu de texte, <a>un lien</a> et 
+		<strong>une portion en emphase</strong></p>
+</blockquote>
+
+
+<script>
+
+var paragraph = document.getElementById('myP');
+var blockquote = paragraph.parentNode;
+//alert(blockquote);
+
+var paragraph = document.getElementById('myP');
+//alert(paragraph.nodeType + '\n\n' + paragraph.nodeName.toLowerCase());
+
+var paragraph = document.getElementById('myP');
+var first = paragraph.firstChild;
+var last = paragraph.lastChild;
+
+//alert(first.nodeValue);
+//alert(last.firstChild.data);
+var paragraph = document.getElementById('myP');
+var children = paragraph.childNodes;
+
+for (var i = 0, c = children.length; i < c; i++) {
+	if (children[i].nodeType === Node.ELEMENT_NODE) { // C'est un élément HTML
+		alert(children[i].firstChild.data);
+	} else { // C'est certainement un nœud textuel
+		alert(children[i].data);
+	}
+}
+var paragraph = document.getElementById('myP');
+var child = paragraph.lastChild; // On prend le dernier enfant
+/*
+	while (child){
+
+		if (child.nodeType === Node.ELEMENT_NODE) { // C'est un élément HTML
+			alert(child.firstChild.data);
+		} else { // C'est certainement un nœud textuel
+			alert(child.data);
+		}
+
+		child = child.previousSibling; // À chaque tour de boucle, on prend l'enfant précédent
+
+	}
+	*/
+var newLink = document.createElement('a');
+newLink.id    = 'sdz_link';
+newLink.href  = 'http://www.siteduzero.com';
+newLink.title = 'Découvrez le Site du Zéro !';
+newLink.setAttribute('tabindex', '10');
+document.getElementById('myP').appendChild(newLink);
+</script>
+
+
+</body>
+</html>
